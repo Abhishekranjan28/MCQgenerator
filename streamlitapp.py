@@ -21,6 +21,8 @@ with open('C:\\Users\\ASUS\\Desktop\\MCQGen\\Response.json','r') as file:
     
     with st.form('user.inputs'):
         #upload file
+        
+        st.title("MCQ Generator")
 
         uploaded_file=st.file_uploader("upload a pdf or text file")
         
