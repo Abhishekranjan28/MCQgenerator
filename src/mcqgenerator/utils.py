@@ -28,13 +28,15 @@ import traceback
 
 def get_table_data(quiz_str):
     try:
-        print("Quiz String:", quiz_str)  # Print the quiz string for debugging
-        quiz_dict = json.loads(quiz_str)
+        
+        quiz_json_str = quiz_str.lstrip().split('\n', 1)[-1]
+
+        quiz_dict = json.loads(quiz_json_str)
         quiz_data_table = []
 
         for key, value in quiz_dict.items():
             mcq = value['mcq']
-            options = " || ".join([f"{option} : {option_value}" for option, option_value in value["options"].items()])
+            options = " || ".join([f"{option}-> {option_value}" for option, option_value in value["options"].items()])
             correct = value['correct']
             quiz_data_table.append({'MCQ': mcq, 'options': options, 'correct': correct})
 
@@ -43,4 +45,3 @@ def get_table_data(quiz_str):
     except Exception as e:
         traceback.print_exception(type(e), e, e.__traceback__)
         return False
-
