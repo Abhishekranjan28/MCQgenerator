@@ -11,10 +11,20 @@ from src.mcqgenerator.MCQGenet  import generate_evaluate_chain
 from src.mcqgenerator.logger import logging
 
 
-#read json file
 
-with open('https://github.com/Abhishekranjan28/MCQgenerator/blob/master/Response.json','r') as file:
-    RESPONSE_JSON=json.load(file)
+import requests
+
+github_file_url = 'https://raw.githubusercontent.com/username/repository/branch/path/to/file.json'
+
+response = requests.get(github_file_url)
+
+if response.status_code == 200:
+    
+    with open('local_file.json', 'w') as f:
+        f.write(response.text)
+    print("File downloaded successfully.")
+else:
+    print("Failed to download file from GitHub.")
  
 
 #creating a form using streamlit
