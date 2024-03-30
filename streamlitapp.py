@@ -13,7 +13,7 @@ from src.mcqgenerator.logger import logging
 
 #read json file
 
-with open('https://github.com/Abhishekranjan28/MCQgenerator/master/.Response.json','r') as file:
+with open('https://github.com/Abhishekranjan28/MCQgenerator/master/Response.json','r') as file:
     RESPONSE_JSON=json.load(file)
  
 
