@@ -21,11 +21,12 @@ response = requests.get(github_file_url)
 if response.status_code == 200:
     
     with open('local_file.json', 'w') as f:
-        f.write(response.text)
+        RESPONSE_JSON=f.write(response.json)
     print("File downloaded successfully.")
 else:
     print("Failed to download file from GitHub.")
- 
+
+
 
 #creating a form using streamlit
     
