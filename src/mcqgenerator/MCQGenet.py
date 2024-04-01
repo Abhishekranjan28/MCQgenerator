@@ -11,11 +11,11 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.chains import SequentialChain
 
-#load_dotenv()
+load_dotenv()
 
-#KEYS=os.getenv('keys')
+KEYS=os.getenv('keys')
 
-llm=ChatOpenAI(openai_api_key='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',model_name='gpt-3.5-turbo',temperature=0.5)
+llm=ChatOpenAI(openai_api_key=KEYS,model_name='gpt-3.5-turbo',temperature=0.5)
 
 
 TEMPLATE="""
