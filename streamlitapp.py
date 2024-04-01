@@ -9,7 +9,7 @@ from src.mcqgenerator.utils import read_file, get_table_data
 import requests
 
 # URL of the file on GitHub
-github_file_url = 'https://raw.githubusercontent.com/username/repository/branch/path/to/file.json'
+github_file_url = 'https://github.com/Abhishekranjan28/MCQgenerator/blob/master/Response.json'
 
 # Fetch the file content using requests
 response = requests.get(github_file_url)
